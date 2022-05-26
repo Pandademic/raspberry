@@ -10,6 +10,8 @@ type Cli struct{
 }
 var(
 	Command string
+	FirstArg string
+	SecondArg string
 	argLength int
 )
 type fn func()
@@ -38,6 +40,8 @@ func (c *Cli) Setup(){
    if argLength > 1 {	
 	   if(contains(os.Args[1],c.AcceptedCommands)){
 		   Command = os.Args[1]
+		   FirstArg = os.Args[2]
+		   SecondArg = os.Args[3]
 	   }else{
 		   fmt.Println("Command not found: ",os.Args[1])
 	   }

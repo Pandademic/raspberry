@@ -47,7 +47,7 @@ func (c *Cli) Setup() {
 		if contains(os.Args[1], c.AcceptedCommands) {
 			Command = os.Args[1]
 			Args = os.Args
-			shiftArgsDownward(Args)
+			Args = shiftArgsDownward(Args)
 		} else {
 			fmt.Println("Command not found: ", os.Args[1])
 		}
